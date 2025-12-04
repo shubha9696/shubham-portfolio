@@ -9,6 +9,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      {/* Portfolio Routes */}
       <Route component={NotFound} />
     </Switch>
   );
