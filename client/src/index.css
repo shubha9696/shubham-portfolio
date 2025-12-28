@@ -112,4 +112,42 @@
   .section-padding {
     @apply py-20 md:py-32;
   }
+
+  .page-shell {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-shell::before,
+  .page-shell::after {
+    content: "";
+    position: fixed;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: -10;
+  }
+
+  .page-shell::before {
+    top: -12rem;
+    left: -6rem;
+    width: 28rem;
+    height: 28rem;
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.22),
+      transparent 70%
+    );
+  }
+
+  .page-shell::after {
+    bottom: -16rem;
+    right: -4rem;
+    width: 30rem;
+    height: 30rem;
+    background: radial-gradient(
+      circle,
+      hsl(var(--secondary) / 0.18),
+      transparent 70%
+    );
+  }
 }

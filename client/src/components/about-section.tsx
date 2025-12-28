@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, Code, Palette, Shield } from "lucide-react";
+import { Brain, Code, Palette, Shield, BarChart3, Database } from "lucide-react";
 
 export default function AboutSection() {
   const features = [
@@ -23,6 +23,17 @@ export default function AboutSection() {
       icon: <Shield className="h-8 w-8 text-secondary" />,
       title: "Cybersecurity",
       description: "Enthusiast in securing web experiences and ethical hacking practices."
+    },
+    // Newly added features
+    {
+      icon: <BarChart3 className="h-8 w-8 text-primary" />,
+      title: "Data Science",
+      description: "From EDA to modeling—turning raw data into insights using Pandas, NumPy, and visualization libraries."
+    },
+    {
+      icon: <Database className="h-8 w-8 text-secondary" />,
+      title: "Data Analyst",
+      description: "Building dashboards, KPI tracking, and storytelling with data to drive decisions."
     }
   ];
 
@@ -40,13 +51,13 @@ export default function AboutSection() {
               About <span className="text-primary">Me</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              I am an AI ML engineer and Multidisciplinary Full Stack Web Developer with a strong command over front-end and back-end technologies. 
+              I am an AI/ML engineer, Data Analyst, and Multidisciplinary Full Stack Web Developer with a strong command over front-end and back-end technologies.
               Currently pursuing my B.Tech in CSE (Artificial Intelligence) at Parul University.
             </p>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
               My passion lies in building scalable, secure, and user-friendly digital products. I combine technical expertise in algorithms 
               with a keen eye for design to create comprehensive solutions. Whether it's training a neural network or designing a 
-              pixel-perfect landing page, I enjoy the entire process of creation.
+              pixel-perfect landing page, I enjoy the entire process of creation. I'm a runner-up in multiple hackathons, always pushing boundaries through rapid prototyping and collaboration.
             </p>
           </motion.div>
 

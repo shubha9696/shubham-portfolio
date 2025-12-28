@@ -8,8 +8,10 @@ export default function SkillsSection() {
       skills: [
         { name: "Python", level: 95, color: "bg-blue-500" },
         { name: "JavaScript / TypeScript", level: 90, color: "bg-yellow-400" },
+        { name: "Java", level: 85, color: "bg-red-500" },
         { name: "SQL", level: 85, color: "bg-orange-500" },
-        { name: "R Programming", level: 70, color: "bg-blue-400" }
+        { name: "C", level: 80, color: "bg-blue-700" },
+        { name: "C++", level: 78, color: "bg-blue-800" }
       ]
     },
     {
@@ -19,7 +21,9 @@ export default function SkillsSection() {
         { name: "Scikit-Learn", level: 90, color: "bg-orange-400" },
         { name: "Computer Vision (OpenCV)", level: 85, color: "bg-green-500" },
         { name: "NLP (NLTK, SpaCy)", level: 88, color: "bg-indigo-500" },
-        { name: "Generative AI", level: 80, color: "bg-purple-500" }
+        { name: "Generative AI", level: 80, color: "bg-purple-500" },
+        { name: "Data Analysis (Pandas, NumPy)", level: 90, color: "bg-blue-600" },
+        { name: "Visualization (Matplotlib, Seaborn, Tableau)", level: 85, color: "bg-blue-300" }
       ]
     },
     {
@@ -30,6 +34,39 @@ export default function SkillsSection() {
         { name: "MongoDB", level: 85, color: "bg-green-500" },
         { name: "Tailwind CSS", level: 95, color: "bg-cyan-300" },
         { name: "Flask", level: 80, color: "bg-gray-400" }
+      ]
+    },
+    {
+      title: "Data Science & Analytics",
+      skills: [
+        { name: "EDA (Exploratory Data Analysis)", level: 90, color: "bg-blue-500" },
+        { name: "Feature Engineering", level: 88, color: "bg-blue-600" },
+        { name: "Modeling (Regression, Classification)", level: 85, color: "bg-indigo-400" },
+        { name: "Time Series Analysis", level: 80, color: "bg-green-400" },
+        { name: "Dashboards (Tableau, PowerBI)", level: 85, color: "bg-blue-300" }
+      ]
+    },
+    {
+      title: "Certifications & Specializations",
+      skills: [
+        { name: "IBM Data Analyst (Certified)", level: 100, color: "bg-primary" },
+        { name: "Microsoft Machine Learning (Certified)", level: 100, color: "bg-secondary" },
+        { name: "Microsoft AI Fundamentals (Certified)", level: 100, color: "bg-secondary" },
+        { name: "IIT Madras - IoT (Certified)", level: 100, color: "bg-secondary" },
+        { name: "IIT Madras - TOC (Certified)", level: 100, color: "bg-secondary" },
+        { name: "IIT Madras - Computer Networks (Certified)", level: 100, color: "bg-secondary" },
+        { name: "Hackathons - Runner Up (Multiple)", level: 100, color: "bg-primary" }
+      ]
+    },
+    {
+      title: "Cybersecurity",
+      skills: [
+        { name: "Secure Coding Practices", level: 85, color: "bg-red-600" },
+        { name: "Vulnerability Assessment", level: 80, color: "bg-orange-600" },
+        { name: "Penetration Testing", level: 75, color: "bg-red-700" },
+        { name: "Network Security", level: 78, color: "bg-blue-700" },
+        { name: "Web Application Security", level: 82, color: "bg-purple-600" },
+        { name: "Cryptography & PKI", level: 70, color: "bg-green-700" }
       ]
     },
     {

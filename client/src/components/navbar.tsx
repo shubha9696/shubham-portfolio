@@ -35,7 +35,9 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/10 py-4" : "bg-transparent py-6"
+        scrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-white/10 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -47,30 +49,52 @@ export default function Navbar() {
           SC<span className="text-primary">.</span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all hover:after:w-full"
               onClick={(e) => { e.preventDefault(); handleScrollTo(link.href); }}
             >
               {link.name}
             </a>
           ))}
+          <div className="h-6 w-px bg-white/10 mx-1" />
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/shubha9696"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-white transition-colors"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shubham-chakrawarti-27764836a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-white transition-colors"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a
+              href="mailto:shubham2005.hc@gmail.com"
+              className="text-muted-foreground hover:text-white transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+            </a>
+          </div>
           <Button variant="outline" size="sm" className="ml-4 border-primary/50 hover:bg-primary/10 hover:text-primary" asChild>
             <a href="mailto:shubham2005.hc@gmail.com">Hire Me</a>
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
         <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

@@ -121,6 +121,66 @@ export default function ExperienceSection() {
                     <div className="bg-secondary h-full w-full" />
                   </div>
                 </div>
+
+                {/* Microsoft - Machine Learning Certificate */}
+                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">Microsoft Machine Learning</h3>
+                    <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded">Certificate</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">Microsoft Certifications</p>
+                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                    <div className="bg-primary h-full w-full" />
+                  </div>
+                </div>
+
+                {/* Microsoft - AI Fundamentals Certificate */}
+                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-lg group-hover:text-secondary transition-colors">Microsoft AI Fundamentals</h3>
+                    <span className="text-xs font-mono bg-secondary/20 text-secondary px-2 py-1 rounded">Certificate</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">Microsoft Certifications</p>
+                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                    <div className="bg-secondary h-full w-full" />
+                  </div>
+                </div>
+
+                {/* HackerRank - Python Certificate */}
+                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">HackerRank Python</h3>
+                    <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded">Certificate</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">HackerRank</p>
+                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                    <div className="bg-primary h-full w-full" />
+                  </div>
+                </div>
+
+                {/* HackerRank - Java Certificate */}
+                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-lg group-hover:text-secondary transition-colors">HackerRank Java</h3>
+                    <span className="text-xs font-mono bg-secondary/20 text-secondary px-2 py-1 rounded">Certificate</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">HackerRank</p>
+                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                    <div className="bg-secondary h-full w-full" />
+                  </div>
+                </div>
+
+                {/* IBM - Data Analyst Certificate */}
+                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">IBM Data Analyst</h3>
+                    <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded">Certificate</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">IBM Skills Network</p>
+                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                    <div className="bg-primary h-full w-full" />
+                  </div>
+                </div>
               </div>
             </div>
 
