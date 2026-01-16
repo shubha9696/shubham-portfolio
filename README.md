@@ -10,6 +10,12 @@ This is the source code for my personal portfolio: an AI/ML, Data, and Full Stac
 - Node.js + Express server
 - Vercel for hosting and deployment
 
+### Screenshots
+
+| Landing page | Projects grid | Detail view / background |
+| ------------ | ------------- | ------------------------ |
+| ![Landing page](attached_assets/image_1764862013441.png) | ![Projects grid](attached_assets/image_1764862603020.png) | ![Detail background](attached_assets/generated_images/abstract_ai_technology_background_with_glowing_nodes.png) |
+
 ### Local Development
 
 1. Install dependencies:
@@ -76,4 +82,3 @@ To update the resume, just replace that file with a new PDF.
 ### License
 
 This repository contains my personal portfolio. You are welcome to take inspiration from the structure and styling, but please do not copy branding, content, or personal assets as‑is.
-

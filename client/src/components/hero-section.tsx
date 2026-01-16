@@ -87,7 +87,7 @@ export default function HeroSection() {
               className="rounded-full px-8 h-12 text-lg border-white/20 hover:bg-white/10 w-full sm:w-auto backdrop-blur-md"
               asChild
             >
-              <a href="/resume.pdf" target="_blank">
+              <a href="/shubham_cv_final.pdf" target="_blank">
                 Download CV <Download className="ml-2 h-4 w-4" />
               </a>
             </Button>
