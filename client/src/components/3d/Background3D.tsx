@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 
 function Stars(props: any) {
-    const ref = useRef<any>();
+    const ref = useRef<any>(null);
 
     const sphere = useMemo(() => {
         const points = new Float32Array(5000);

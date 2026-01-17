@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, Torus } from "@react-three/drei";
 
 function Ring({ position, color, size, speed }: any) {
-    const ref = useRef<any>();
+    const ref = useRef<any>(null);
 
     useFrame((state) => {
         if (ref.current) {

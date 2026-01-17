@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial, Sphere, MeshWobbleMaterial } from "@react-three/drei";
 
 export default function Hero3DElement() {
-    const meshRef = useRef<any>();
+    const meshRef = useRef<any>(null);
 
     useFrame((state) => {
         if (meshRef.current) {
