@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Download } from "lucide-react";
-import heroBg from "@assets/generated_images/abstract_ai_technology_background_with_glowing_nodes.png";
+import { Canvas } from "@react-three/fiber";
+import Hero3DElement from "./3d/Hero3DElement";
+import FloatingRings3D from "./3d/FloatingRings3D";
 
 export default function HeroSection() {
   const highlights = [
@@ -20,12 +22,11 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Abstract AI Background"
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background z-10" />
+        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+          <Hero3DElement />
+          <FloatingRings3D />
+        </Canvas>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background z-10 pointer-events-none" />
         <div className="pointer-events-none absolute -top-32 left-[-10%] h-80 w-80 rounded-full bg-primary/20 blur-3xl opacity-70" />
         <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] h-96 w-96 rounded-full bg-secondary/25 blur-3xl opacity-60" />
       </div>
