@@ -7,14 +7,11 @@ import ExperienceSection from "@/components/experience-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
-import Background3D from "@/components/3d/Background3D";
-
 export default function Home() {
   return (
-    <div className="min-h-screen text-foreground font-sans selection:bg-primary/30 page-shell relative">
-      <Background3D />
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 page-shell">
       <Navbar />
-      <main className="relative z-10">
+      <main>
         <HeroSection />
         <AboutSection />
         <SkillsSection />

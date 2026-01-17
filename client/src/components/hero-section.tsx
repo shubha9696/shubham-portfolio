@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Download } from "lucide-react";
-import Hero3DElement from "@/components/3d/Hero3DElement";
+import heroBg from "@assets/generated_images/abstract_ai_technology_background_with_glowing_nodes.png";
 
 export default function HeroSection() {
   const highlights = [
@@ -19,8 +19,16 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
-      <Hero3DElement />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10 pointer-events-none" />
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroBg}
+          alt="Abstract AI Background"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background z-10" />
+        <div className="pointer-events-none absolute -top-32 left-[-10%] h-80 w-80 rounded-full bg-primary/20 blur-3xl opacity-70" />
+        <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] h-96 w-96 rounded-full bg-secondary/25 blur-3xl opacity-60" />
+      </div>
 
       <div className="container mx-auto px-4 z-20 relative">
         <div className="max-w-5xl mx-auto text-center">

@@ -112,7 +112,7 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/30 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31, 38, 135, 0.37)];
+    @apply bg-card/50 backdrop-blur-md border border-white/10;
   }
 
   .text-gradient {
