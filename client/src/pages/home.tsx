@@ -11,6 +11,7 @@ import Background3D from "@/components/3d/Background3D";
 export default function Home() {
   return (
     <div className="min-h-screen bg-transparent text-foreground font-sans selection:bg-primary/30 page-shell">
+      <div className="mesh-gradient" />
       <div className="noise-bg fixed inset-0 z-50 pointer-events-none" />
       <Background3D />
       <Navbar />

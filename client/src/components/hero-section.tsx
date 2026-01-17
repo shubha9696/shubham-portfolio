@@ -48,11 +48,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold font-heading mb-6 leading-tight tracking-tight"
+            className="text-5xl md:text-8xl font-bold font-heading mb-6 leading-tight tracking-tight px-4"
           >
-            Hi, I'm <span className="text-gradient">Shubham</span>.
+            Hi, I'm <span className="shimmer-text">Shubham</span>.
             <br />
-            I Build Intelligent Systems.
+            <span className="text-white/90">I Build Intelligent Systems.</span>
           </motion.h1>
 
           <motion.p

@@ -1,0 +1,9 @@
+
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development tsx server/index.ts
+
+8:29:08 AM [express] serving on port 5000
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+8:29:25 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class `shadow-[0_4px_30px_rgba(0,`
+  Plugin: @tailwindcss/vite:generate:serve
+  File: D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/index.css

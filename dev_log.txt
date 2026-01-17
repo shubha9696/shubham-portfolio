@@ -1,0 +1,23 @@
+
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development tsx server/index.ts
+
+8:28:11 AM [express] serving on port 5000
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+8:28:30 AM [vite] Internal server error: Cannot apply unknown utility class `shadow-[0_4px_30px_rgba(0,`
+  Plugin: @tailwindcss/vite:generate:serve
+  File: D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/index.css
+      at onInvalidCandidate (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:1511)
+      at Ae (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:16:36011)
+      at file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:355
+      at hr (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1718)
+      at I (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1377)
+      at xe (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:172)
+      at zi (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:294)
+      at async Ba (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:631)
+      at async Hu (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:1406)
+      at async nu (D:\wall\New folder (2)\ResumePortfolio\ResumePortfolio\node_modules\@tailwindcss\node\dist\index.mjs:10:3433)
+      at async D.generate (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/@tailwindcss/vite/dist/index.mjs:1:3685)
+      at async TransformPluginContext.transform (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/@tailwindcss/vite/dist/index.mjs:1:2058)
+      at async EnvironmentPluginContainer.transform (D:\wall\New folder (2)\ResumePortfolio\ResumePortfolio\node_modules\vite\dist\node\chunks\config.js:30905:14)
+      at async loadAndTransform (D:\wall\New folder (2)\ResumePortfolio\ResumePortfolio\node_modules\vite\dist\node\chunks\config.js:26043:26)
