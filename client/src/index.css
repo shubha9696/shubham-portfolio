@@ -112,7 +112,8 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/10 backdrop-blur-2xl border border-white/5 shadow-[0_4px_30px_rgba(0, 0, 0, 0.1)];
+    @apply bg-card/10 backdrop-blur-2xl border border-white/5;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 

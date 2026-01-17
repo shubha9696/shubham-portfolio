@@ -1,0 +1,38 @@
+
+> rest-express@1.0.0 build
+> tsx script/build.ts
+
+building client...
+[36mvite v7.1.12 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 6 modules transformed.
+Γ£ù Build failed in 152ms
+[@tailwindcss/vite:generate:build] Cannot apply unknown utility class `shadow-[0_4px_30px_rgba(0,`
+file: D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/index.css
+    at onInvalidCandidate (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:1511)
+    at Ae (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:16:36011)
+    at file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:355
+    at hr (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1718)
+    at I (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:3:1377)
+    at xe (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:21:172)
+    at zi (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:294)
+    at async Ba (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:631)
+    at async Hu (file:///D:/wall/New%20folder%20(2)/ResumePortfolio/ResumePortfolio/node_modules/tailwindcss/dist/chunk-OQ4W6SLL.mjs:38:1406)
+    at async nu (D:\wall\New folder (2)\ResumePortfolio\ResumePortfolio\node_modules\@tailwindcss\node\dist\index.mjs:10:3433) {
+  code: 'PLUGIN_ERROR',
+  plugin: '@tailwindcss/vite:generate:build',
+  hook: 'transform',
+  id: 'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/index.css',
+  watchFiles: [
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/index.html',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/main.tsx',
+    'D:\\wall\\New folder (2)\\ResumePortfolio\\ResumePortfolio\\package.json',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/node_modules/react-dom/client.js',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/node_modules/react/jsx-runtime.js',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/App.tsx',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/client/src/index.css',
+    'D:\\wall\\New folder (2)\\ResumePortfolio\\ResumePortfolio\\node_modules\\tailwindcss\\index.css',
+    'D:\\wall\\New folder (2)\\ResumePortfolio\\ResumePortfolio\\node_modules\\tw-animate-css\\dist\\tw-animate.css',
+    'D:/wall/New folder (2)/ResumePortfolio/ResumePortfolio/node_modules/react/cjs/react-jsx-runtime.production.js'
+  ]
+}
