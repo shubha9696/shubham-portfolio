@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import ScrambleText from "./scramble-text";
+import Magnetic from "./magnetic";
 
 export default function ContactSection() {
   return (
@@ -15,7 +17,9 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In <span className="text-primary">Touch</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Get In <span className="text-primary"><ScrambleText text="Touch" /></span>
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or want to discuss AI solutions? Feel free to reach out.
           </p>
@@ -29,40 +33,40 @@ export default function ContactSection() {
           >
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <div className="space-y-6">
-              <Card className="glass-card border-white/5">
+              <Card className="glass-card border-white/5 hover:border-primary/45 transition-colors duration-300">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email Me</p>
-                    <a href="mailto:shubham2005.hc@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">
-                      shubham2005.hc@gmail.com
+                    <a href="mailto:shubham2004.hc@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">
+                      shubham2004.hc@gmail.com
                     </a>
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="glass-card border-white/5">
+              <Card className="glass-card border-white/5 hover:border-secondary/45 transition-colors duration-300">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="h-12 w-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Call Me</p>
-                    <p className="text-lg font-medium">+91-9696137126</p>
+                    <p className="text-lg font-medium">+91 9696137126</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="glass-card border-white/5">
+              <Card className="glass-card border-white/5 hover:border-primary/45 transition-colors duration-300">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center text-white">
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-lg font-medium">Mumbai, Maharashtra, India</p>
+                    <p className="text-lg font-medium">Bengaluru, Karnataka, India</p>
                   </div>
                 </CardContent>
               </Card>
@@ -73,7 +77,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card/30 backdrop-blur-sm p-8 rounded-2xl border border-white/5"
+            className="bg-card/30 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all duration-300"
           >
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -95,9 +99,11 @@ export default function ContactSection() {
                 <label className="text-sm font-medium">Message</label>
                 <Textarea placeholder="Tell me about your project..." className="min-h-[150px] bg-background/50 border-white/10" />
               </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white">
-                Send Message <Send className="ml-2 h-4 w-4" />
-              </Button>
+              <Magnetic>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_12px_30px_rgba(88,28,135,0.4)] transition-all duration-300">
+                  Send Message <Send className="ml-2 h-4 w-4" />
+                </Button>
+              </Magnetic>
             </form>
           </motion.div>
         </div>

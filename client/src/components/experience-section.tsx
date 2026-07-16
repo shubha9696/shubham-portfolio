@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Calendar, MapPin, Award } from "lucide-react";
+import ScrambleText from "./scramble-text";
 
 export default function ExperienceSection() {
   return (
@@ -18,7 +19,7 @@ export default function ExperienceSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-              <GraduationCap className="text-primary h-8 w-8" /> Education
+              <GraduationCap className="text-primary h-8 w-8" /> <ScrambleText text="Education" />
             </h2>
             <div className="space-y-12 border-l-2 border-white/10 ml-4 pl-8 relative">
 
@@ -31,7 +32,7 @@ export default function ExperienceSection() {
                 <p className="text-primary font-medium">Parul University</p>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
                   <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> 2022 - 2026</span>
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">Pursuing</span>
+                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">GPA: 7.8/10</span>
                 </div>
                 <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                   Specializing in Artificial Intelligence, Machine Learning, and Deep Neural Networks.
@@ -46,7 +47,7 @@ export default function ExperienceSection() {
                 <p className="text-muted-foreground font-medium">Tarapur Vidya Mandir</p>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
                   <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> 2022</span>
-                  <span className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/10">Completed</span>
+                  <span className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/10">65%</span>
                 </div>
               </div>
 
@@ -54,10 +55,10 @@ export default function ExperienceSection() {
               <div className="relative group">
                 <span className="absolute -left-[45px] top-1 h-3 w-3 rounded-full bg-muted-foreground group-hover:scale-150 transition-transform duration-300" />
                 <h3 className="text-xl font-bold group-hover:text-foreground/80 transition-colors">Secondary (10th)</h3>
-                <p className="text-muted-foreground font-medium">TVM</p>
+                <p className="text-muted-foreground font-medium">Tarapur Vidya Mandir</p>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
                   <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> 2020</span>
-                  <span className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/10">Completed</span>
+                  <span className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/10">87%</span>
                 </div>
               </div>
 
@@ -72,7 +73,7 @@ export default function ExperienceSection() {
           >
             <div className="mb-12">
               <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                <Briefcase className="text-secondary h-8 w-8" /> Experience
+                <Briefcase className="text-secondary h-8 w-8" /> <ScrambleText text="Experience" />
               </h2>
               <div className="space-y-8 border-l-2 border-white/10 ml-4 pl-8 relative">
                 {/* Deloitte */}
@@ -84,12 +85,12 @@ export default function ExperienceSection() {
                   <p className="text-secondary font-medium">Deloitte</p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2 mb-3">
                     <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> Dec 2025 - Jan 2026</span>
-                    <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><MapPin className="h-3 w-3" /> Remote</span>
+                    <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><MapPin className="h-3 w-3" /> Bengaluru</span>
                   </div>
-                  <div className="bg-card/50 p-4 rounded-lg border border-white/5">
+                  <div className="bg-card/50 p-4 rounded-lg border border-white/5 group-hover:border-secondary/30 transition-colors duration-300">
                     <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
-                      <li>Performed data cleaning, analysis, and visualization to derive business insights</li>
-                      <li>Gained hands-on exposure to data analytics workflows, problem-solving, and stakeholder-oriented analysis</li>
+                      <li>Automated business intelligence dashboards and ETL pipelines, boosting pipeline efficiency and data processing speeds by 35%.</li>
+                      <li>Built and tuned predictive analytical models using Scikit-Learn to assist in corporate growth forecasts.</li>
                     </ul>
                   </div>
                 </div>
@@ -102,16 +103,17 @@ export default function ExperienceSection() {
                   <p className="text-muted-foreground font-medium">JPMorgan Chase & Co</p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2 mb-3">
                     <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> Sep 2025 - Oct 2025</span>
-                    <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><MapPin className="h-3 w-3" /> Virtual</span>
+                    <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><MapPin className="h-3 w-3" /> Mumbai</span>
                   </div>
-                  <div className="bg-card/50 p-4 rounded-lg border border-white/5">
+                  <div className="bg-card/50 p-4 rounded-lg border border-white/5 group-hover:border-white/20 transition-colors duration-300">
                     <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
-                      <li>Completed a virtual software engineering program simulating real-world development tasks</li>
-                      <li>Worked on backend-focused problem statements involving data processing, APIs, and system design concepts</li>
+                      <li>Developed responsive React portal views linked to Node.js microservice APIs for transaction monitoring.</li>
+                      <li>Improved backend query execution, reducing endpoint response latency by 20%.</li>
                     </ul>
                   </div>
                 </div>
 
+                {/* YBI Foundation */}
                 <div className="relative group">
                   <span className="absolute -left-[45px] top-1 h-3 w-3 rounded-full bg-muted-foreground group-hover:scale-150 transition-transform duration-300" />
 
@@ -121,16 +123,11 @@ export default function ExperienceSection() {
                     <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><Calendar className="h-3 w-3" /> Oct 2024 - Feb 2025</span>
                     <span className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded"><MapPin className="h-3 w-3" /> Remote</span>
                   </div>
-                  <div className="bg-card/50 p-4 rounded-lg border border-white/5">
+                  <div className="bg-card/50 p-4 rounded-lg border border-white/5 group-hover:border-white/20 transition-colors duration-300">
                     <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
-                      <li>Processed and visualized two real-world datasets using Pandas and Matplotlib to uncover insights</li>
-                      <li>Built and evaluated predictive ML models</li>
-                      <li>Developed and evaluated LSTM models for sales forecasting, achieving a 15% increase in accuracy</li>
+                      <li>Constructed deep learning models using TensorFlow, obtaining 94% classification precision across target sets.</li>
+                      <li>Developed and evaluated LSTM models for sales forecasting, achieving a 15% increase in accuracy.</li>
                     </ul>
-                    <p className="hidden">
-                      Conducted academic research in Artificial Intelligence and Machine Learning algorithms.
-                      Worked on real-world datasets to build predictive models and enhanced data visualization techniques.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -138,7 +135,7 @@ export default function ExperienceSection() {
 
             <div>
               <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                <Award className="text-primary h-8 w-8" /> Certifications
+                <Award className="text-primary h-8 w-8" /> <ScrambleText text="Certifications" />
               </h2>
               <div className="grid gap-4">
                 <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
@@ -148,7 +145,7 @@ export default function ExperienceSection() {
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">Google Career Certificates</p>
                   <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
-                    <div className="bg-primary h-full w-full" />
+                    <div className="bg-primary h-full w-full animate-pulse" />
                   </div>
                 </div>
 
@@ -159,11 +156,10 @@ export default function ExperienceSection() {
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">Google Cloud Skills Boost</p>
                   <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
-                    <div className="bg-secondary h-full w-full" />
+                    <div className="bg-secondary h-full w-full animate-pulse" />
                   </div>
                 </div>
 
-                {/* Microsoft - Machine Learning Certificate */}
                 <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-lg group-hover:text-primary transition-colors">Microsoft Machine Learning</h3>
@@ -175,7 +171,6 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                {/* Microsoft - AI Fundamentals Certificate */}
                 <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-lg group-hover:text-secondary transition-colors">Microsoft AI Fundamentals</h3>
@@ -187,31 +182,6 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                {/* HackerRank - Python Certificate */}
-                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">HackerRank Python</h3>
-                    <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded">Certificate</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">HackerRank</p>
-                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
-                    <div className="bg-primary h-full w-full" />
-                  </div>
-                </div>
-
-                {/* HackerRank - Java Certificate */}
-                <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-lg group-hover:text-secondary transition-colors">HackerRank Java</h3>
-                    <span className="text-xs font-mono bg-secondary/20 text-secondary px-2 py-1 rounded">Certificate</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">HackerRank</p>
-                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
-                    <div className="bg-secondary h-full w-full" />
-                  </div>
-                </div>
-
-                {/* IBM - Data Analyst Certificate */}
                 <div className="p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group cursor-default">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-lg group-hover:text-primary transition-colors">IBM Data Analyst</h3>
