@@ -4,6 +4,8 @@ import { ArrowRight, Github, Linkedin, Download } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import Hero3DElement from "./3d/Hero3DElement";
 import FloatingRings3D from "./3d/FloatingRings3D";
+import Magnetic from "./magnetic";
+import ScrambleText from "./scramble-text";
 
 export default function HeroSection() {
   const highlights = [
@@ -50,9 +52,11 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-8xl font-bold font-heading mb-6 leading-tight tracking-tight px-4"
           >
-            Hi, I'm <span className="shimmer-text">Shubham</span>.
+            Hi, I'm <span className="shimmer-text"><ScrambleText text="Shubham" triggerOnScroll={false} /></span>.
             <br />
-            <span className="text-white/90">I Build Intelligent Systems.</span>
+            <span className="text-white/90">
+              <ScrambleText text="I Build Intelligent Systems." triggerOnScroll={false} />
+            </span>
           </motion.h1>
 
           <motion.p
@@ -73,25 +77,29 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-lg w-full sm:w-auto shadow-[0_18px_45px_rgba(88,28,135,0.55)] hover:shadow-[0_24px_60px_rgba(88,28,135,0.75)] transition-shadow"
-              asChild
-            >
-              <a href="#projects">
-                View Work <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full px-8 h-12 text-lg border-white/20 hover:bg-white/10 w-full sm:w-auto backdrop-blur-md"
-              asChild
-            >
-              <a href="/shubham_cv_final.pdf" target="_blank">
-                Download CV <Download className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <Magnetic>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-lg w-full sm:w-auto shadow-[0_18px_45px_rgba(88,28,135,0.55)] hover:shadow-[0_24px_60px_rgba(88,28,135,0.75)] transition-all duration-300"
+                asChild
+              >
+                <a href="#projects">
+                  View Work <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 h-12 text-lg border-white/20 hover:bg-white/10 w-full sm:w-auto backdrop-blur-md transition-all duration-300"
+                asChild
+              >
+                <a href="/shubham_cv_final.pdf" target="_blank">
+                  Download CV <Download className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </Magnetic>
           </motion.div>
 
           <motion.div
@@ -140,22 +148,26 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-10 flex items-center justify-center gap-6"
           >
-            <a
-              href="https://github.com/shubha9696"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shubham-chakrawarti-27764836a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
+            <Magnetic>
+              <a
+                href="https://github.com/shubha9696"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full inline-block"
+              >
+                <Github className="h-6 w-6" />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="https://www.linkedin.com/in/shubham-chakrawarti-27764836a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full inline-block"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+            </Magnetic>
           </motion.div>
         </div>
       </div>
