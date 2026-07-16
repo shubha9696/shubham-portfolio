@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Magnetic from "./magnetic";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-heading font-bold text-foreground hover:text-primary transition-colors"
+          className="text-2xl font-heading font-bold text-foreground hover:text-primary transition-colors select-none"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
           SC<span className="text-primary">.</span>
@@ -51,43 +52,52 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="relative text-sm font-medium text-muted-foreground hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all hover:after:w-full"
-              onClick={(e) => { e.preventDefault(); handleScrollTo(link.href); }}
-            >
-              {link.name}
-            </a>
+            <Magnetic key={link.name}>
+              <a
+                href={link.href}
+                className="relative text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2 px-3 block after:absolute after:left-3 after:right-3 after:bottom-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all hover:after:w-[calc(100%-1.5rem)]"
+                onClick={(e) => { e.preventDefault(); handleScrollTo(link.href); }}
+              >
+                {link.name}
+              </a>
+            </Magnetic>
           ))}
           <div className="h-6 w-px bg-white/10 mx-1" />
-          <div className="flex items-center gap-3">
-            <a
-              href="https://github.com/shubha9696"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-white transition-colors"
-            >
-              <Github className="h-4 w-4" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shubham-chakrawarti-27764836a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-white transition-colors"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-            <a
-              href="mailto:shubham2005.hc@gmail.com"
-              className="text-muted-foreground hover:text-white transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-            </a>
+          <div className="flex items-center gap-4">
+            <Magnetic>
+              <a
+                href="https://github.com/shubha9696"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full inline-block"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="https://www.linkedin.com/in/shubham-chakrawarti-27764836a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full inline-block"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="mailto:shubham2004.hc@gmail.com"
+                className="text-muted-foreground hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full inline-block"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+            </Magnetic>
           </div>
-          <Button variant="outline" size="sm" className="ml-4 border-primary/50 hover:bg-primary/10 hover:text-primary" asChild>
-            <a href="mailto:shubham2005.hc@gmail.com">Hire Me</a>
-          </Button>
+          <Magnetic>
+            <Button variant="outline" size="sm" className="ml-4 border-primary/50 hover:bg-primary/10 hover:text-primary rounded-full px-6 transition-all duration-300" asChild>
+              <a href="mailto:shubham2004.hc@gmail.com">Hire Me</a>
+            </Button>
+          </Magnetic>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>

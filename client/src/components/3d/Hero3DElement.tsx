@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { MeshDistortMaterial } from "@react-three/drei";
 
 export default function Hero3DElement() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -29,7 +28,8 @@ export default function Hero3DElement() {
   return (
     <mesh ref={meshRef}>
       <sphereGeometry args={[1.5, 64, 64]} />
-      <MeshDistortMaterial
+      {/* @ts-ignore */}
+      <meshDistortMaterial
         color="#3b82f6"
         attach="material"
         distort={0.45}

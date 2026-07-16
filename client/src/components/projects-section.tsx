@@ -20,6 +20,8 @@ import {
   Brain,
   MapPin,
 } from "lucide-react";
+import ScrambleText from "./scramble-text";
+import Magnetic from "./magnetic";
 
 export default function ProjectsSection() {
   const projects = [
@@ -56,38 +58,39 @@ export default function ProjectsSection() {
       icon: <Utensils className="h-10 w-10 text-secondary" />,
     },
     {
-      title: "Data Science Portfolio",
+      title: "Single Camera Speed & Distance",
       description:
-        "Collection of notebooks and ETL pipelines demonstrating EDA, feature engineering, and predictive modeling.",
-      tags: ["Python", "Pandas", "NumPy", "EDA"],
-      link: "https://github.com/shubha9696",
-      icon: <BarChart3 className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Sales Analytics Dashboard",
-      description:
-        "Interactive KPI dashboard with drill-down analytics backed by Node-based data aggregation APIs.",
-      tags: ["React", "Express", "Chart.js", "Analytics"],
-      link: "https://github.com/shubha9696",
-      icon: <LineChart className="h-10 w-10 text-secondary" />,
-    },
-    {
-      title: "Sentiment Analysis API",
-      description:
-        "Production-ready REST API for real-time sentiment analysis across product reviews and social feeds.",
-      tags: ["Python", "Flask", "NLP", "Docker"],
-      link: "https://github.com/shubha9696",
+        "Real-time object distance measurement and velocity tracking engine using OpenCV and MediaPipe visual vectors.",
+      tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision"],
+      link: "https://github.com/shubha9696/Distance_Measurement_Single_Camera",
       icon: <Brain className="h-10 w-10 text-primary" />,
     },
     {
-      title: "Google Maps Clone",
+      title: "SmartSession Monitor",
       description:
-        "Modern maps experience with pan and zoom, geocoding search, interactive markers, and route exploration.",
-      tags: ["React", "Leaflet", "Mapbox", "Geolocation"],
-      link: "https://github.com/shubha9696",
-      icon: <MapPin className="h-10 w-10 text-secondary" />,
+        "AI Student engagement monitoring tool that analyzes webcam video feeds to detect expressions and flag confusion metrics live.",
+      tags: ["JavaScript", "React", "TensorFlow.js", "Computer Vision"],
+      link: "https://github.com/shubha9696/smartsession",
+      icon: <LineChart className="h-10 w-10 text-secondary" />,
+    },
+    {
+      title: "LandBuilder Platform",
+      description:
+        "Interactive geographical buildable land analysis application that estimates topography slopes and maps coordinate boundaries.",
+      tags: ["TypeScript", "React", "Mapbox", "Geolocation"],
+      link: "https://github.com/shubha9696/landbuilder",
+      icon: <MapPin className="h-10 w-10 text-primary" />,
     },
   ];
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
 
   return (
     <section id="projects" className="section-padding">
@@ -99,7 +102,7 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+            Featured <span className="text-gradient"><ScrambleText text="Deployments" /></span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A curated mix of AI, data, and full stack work that reflects how I
@@ -115,26 +118,34 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06 }}
+              onMouseMove={handleMouseMove}
+              className="relative rounded-2xl group overflow-hidden border border-white/10 bg-slate-900/40 p-[1px] hover:border-primary/40 transition-all duration-300"
+              style={{
+                background: "radial-gradient(250px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(168, 85, 247, 0.15), transparent 80%)"
+              }}
             >
-              <Card className="glass-card h-full flex flex-col hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(0,0,0,0.75)]">
+              <Card className="glass-card h-full border-none bg-slate-950/80 flex flex-col hover:bg-slate-950/50 transition-colors duration-300 group">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-4">
                     <div className="p-3 rounded-xl bg-background/60 border border-white/10 group-hover:bg-primary/10 transition-colors">
                       {project.icon}
                     </div>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="text-muted-foreground hover:text-white"
+                    <Magnetic>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-1 hover:bg-white/5 rounded-full inline-block"
                       >
-                        <Github className="h-5 w-5" />
-                      </Button>
-                    </a>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="text-muted-foreground hover:text-white"
+                        >
+                          <Github className="h-5 w-5" />
+                        </Button>
+                      </a>
+                    </Magnetic>
                   </div>
                   <CardTitle className="text-xl font-bold">
                     {project.title}
@@ -143,7 +154,7 @@ export default function ProjectsSection() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 rounded-md bg-white/5 text-muted-foreground border border-white/5"
+                        className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-muted-foreground border border-white/5"
                       >
                         {tag}
                       </span>
@@ -156,19 +167,21 @@ export default function ProjectsSection() {
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
-                  <Button
-                    variant="link"
-                    className="px-0 text-primary hover:text-primary/80"
-                    asChild
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  <Magnetic>
+                    <Button
+                      variant="link"
+                      className="px-0 text-primary hover:text-primary/80 flex items-center gap-1 font-semibold"
+                      asChild
                     >
-                      View Project <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </Magnetic>
                 </CardFooter>
               </Card>
             </motion.div>
