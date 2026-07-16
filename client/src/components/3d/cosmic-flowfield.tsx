@@ -72,7 +72,7 @@ function FlowFieldPoints() {
       spiral[i3 + 2] = (Math.random() - 0.5) * 0.2;
     }
 
-    return { torusKnotPos, spherePos, gridPos, spiralPos };
+    return { torusKnotPos: torus, spherePos: sphere, gridPos: grid, spiralPos: spiral };
   }, []);
 
   // Initialize active vertex arrays

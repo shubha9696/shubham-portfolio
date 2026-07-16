@@ -34,7 +34,7 @@ export default function ScrambleText({ text, className = "", triggerOnScroll = t
         setDisplayText(text);
       }
 
-      iteration += 1 / 3;
+      iteration += 1 / 1.5;
     }, 30);
   };
 
