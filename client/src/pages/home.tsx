@@ -7,6 +7,8 @@ import ExperienceSection from "@/components/experience-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import Background3D from "@/components/3d/Background3D";
+import TerminalConsole from "@/components/terminal-console";
+import ChatWidget from "@/components/chat-widget";
 
 export default function Home() {
   return (
@@ -17,12 +19,14 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <TerminalConsole />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
         <ContactSection />
       </main>
+      <ChatWidget />
       <Footer />
     </div>
   );

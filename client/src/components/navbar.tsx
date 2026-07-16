@@ -17,6 +17,7 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Console", href: "#terminal" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
