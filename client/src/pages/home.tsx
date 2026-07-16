@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import TerminalConsole from "@/components/terminal-console";
 import ChatWidget from "@/components/chat-widget";
 import AudioController from "@/components/audio-controller";
+import CustomCursor from "@/components/custom-cursor";
 import Lenis from "lenis";
 
 export default function Home() {
@@ -41,6 +42,7 @@ export default function Home() {
     <div className="min-h-screen bg-transparent text-foreground font-sans selection:bg-primary/30 page-shell">
       <div className="mesh-gradient" />
       <div className="noise-bg fixed inset-0 z-50 pointer-events-none" />
+      <CustomCursor />
       <Navbar />
       <main>
         <HeroSection />
