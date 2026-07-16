@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Code, Palette, Shield, BarChart3, Database } from "lucide-react";
+import ScrambleText from "./scramble-text";
 
 export default function AboutSection() {
   const features = [
@@ -24,7 +25,6 @@ export default function AboutSection() {
       title: "Cybersecurity",
       description: "Enthusiast in securing web experiences and ethical hacking practices."
     },
-    // Newly added features
     {
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
       title: "Data Science",
@@ -48,7 +48,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              About <span className="text-primary">Me</span>
+              About <span className="text-gradient"><ScrambleText text="Agent" /></span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
               I am an AI/ML engineer, Data Analyst, and Multidisciplinary Full Stack Web Developer with a strong command over front-end and back-end technologies.
