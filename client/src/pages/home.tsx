@@ -9,6 +9,7 @@ import Footer from "@/components/footer";
 import Background3D from "@/components/3d/Background3D";
 import TerminalConsole from "@/components/terminal-console";
 import ChatWidget from "@/components/chat-widget";
+import AudioController from "@/components/audio-controller";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <ChatWidget />
+      <AudioController />
       <Footer />
     </div>
   );

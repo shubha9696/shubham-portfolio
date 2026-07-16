@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Bot, X, Send, User } from "lucide-react";
+import { Bot, X, Send, Mic, MicOff, Volume2, VolumeX } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ChatWidget() {
@@ -8,13 +8,51 @@ export default function ChatWidget() {
     { sender: "agent", text: "Hello! I'm Alexa, Shubham's AI Twin. Ask me anything about his credentials, experience, or projects!" }
   ]);
   const [inputValue, setInputValue] = useState("");
+  const [isListening, setIsListening] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  useEffect(() => {
+    // Initialise Web Speech Recognition
+    const SpeechRecognition =
+      (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+      const rec = new SpeechRecognition();
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.lang = "en-US";
+
+      rec.onstart = () => {
+        setIsListening(true);
+      };
+
+      rec.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        if (transcript) {
+          addMessage("user", transcript);
+          setTimeout(() => respondToQuery(transcript.toLowerCase()), 500);
+        }
+      };
+
+      rec.onerror = () => {
+        setIsListening(false);
+      };
+
+      rec.onend = () => {
+        setIsListening(false);
+      };
+
+      recognitionRef.current = rec;
+    }
+  }, []);
 
   const addMessage = (sender: "agent" | "user", text: string) => {
     setMessages((prev) => [...prev, { sender, text }]);
@@ -33,30 +71,57 @@ export default function ChatWidget() {
     setTimeout(() => respondToQuery(text.toLowerCase()), 500);
   };
 
+  const toggleListening = () => {
+    if (!recognitionRef.current) {
+      alert("Speech recognition is not supported in this browser. Please try Chrome or Safari.");
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+    } else {
+      recognitionRef.current.start();
+    }
+  };
+
+  const speakText = (text: string) => {
+    if (isMuted || !("speechSynthesis" in window)) return;
+
+    // Clean markdown characters before speaking
+    const cleanText = text.replace(/\*\*|__/g, "").replace(/\*|_/g, "");
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+    window.speechSynthesis.speak(utterance);
+  };
+
   const respondToQuery = (query: string) => {
     let response = "I'm not sure about that. Try asking about his experience, projects, or education!";
     
     if (query.includes("experience") || query.includes("work") || query.includes("job") || query.includes("deloitte") || query.includes("jpmorgan")) {
-      response = "Shubham has worked as a **Data Analyst** at **Deloitte** (automated analytical dashboards, 35% speedup) and a **Software Engineer** at **JPMorgan Chase & Co** (React & Node.js microservices). Let me show you his Experience section!";
+      response = "Shubham has worked as a Data Analyst at Deloitte (automated analytical dashboards, 35% speedup) and a Software Engineer at JPMorgan Chase & Co (React & Node.js microservices). Let me show you his Experience section!";
       const expEl = document.getElementById("experience");
       if (expEl) expEl.scrollIntoView({ behavior: "smooth" });
     } else if (query.includes("ai") || query.includes("project") || query.includes("portfolio")) {
-      response = "Shubham has built multiple high-impact projects including **Sonoma AI Multimodal**, the **Hiring Assistant Chatbot**, and a **Distance Measurement System**. Let me scroll down to his projects!";
+      response = "Shubham has built multiple high-impact projects including Sonoma AI Multimodal, the Hiring Assistant Chatbot, and a Distance Measurement System. Let me scroll down to his projects!";
       const projectsEl = document.getElementById("projects");
       if (projectsEl) projectsEl.scrollIntoView({ behavior: "smooth" });
     } else if (query.includes("education") || query.includes("college") || query.includes("university") || query.includes("degree") || query.includes("parul")) {
-      response = "He is completing a **B.Tech in CSE (Artificial Intelligence)** from **Parul University** (GPA: 7.8/10).";
+      response = "He is completing a B.Tech in CSE (Artificial Intelligence) from Parul University (GPA: 7.8/10).";
     } else if (query.includes("contact") || query.includes("email") || query.includes("phone") || query.includes("linkedin")) {
-      response = "Contact details: Email is **shubham2004.hc@gmail.com**, Phone is **+91 9696137126**, LinkedIn is **linkedin.com/in/shubham-chakrawarti-27764836a**.";
+      response = "Contact details: Email is shubham2004.hc@gmail.com, Phone is +91 9696137126, LinkedIn is linkedin.com/in/shubham-chakrawarti-27764836a.";
     } else if (query.includes("console") || query.includes("terminal") || query.includes("matrix") || query.includes("secret")) {
-      response = "Scroll to the **Command Line Portal** section and try typing commands like \`help\`, \`skills\`, or \`secret\`!";
+      response = "Scroll to the Command Line Portal section and try typing commands like help, skills, or secret!";
       const termEl = document.getElementById("terminal");
       if (termEl) termEl.scrollIntoView({ behavior: "smooth" });
     } else if (query.includes("resume") || query.includes("cv")) {
-      response = "You can download his updated resume by clicking the **Resume** button in the header or typing \`resume\` in the developer terminal console.";
+      response = "You can download his updated resume by clicking the Resume button in the header or typing resume in the developer terminal console.";
     }
 
     addMessage("agent", response);
+    speakText(response);
   };
 
   return (
@@ -86,15 +151,28 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-sm text-white">Alexa (Shubh's AI)</h4>
-                  <span className="text-xs text-emerald-400 flex items-center gap-1.5 before:content-[''] before:w-1.5 before:h-1.5 before:bg-emerald-400 before:rounded-full">Active</span>
+                  <span className="text-xs text-emerald-400 flex items-center gap-1.5 before:content-[''] before:w-1.5 before:h-1.5 before:bg-emerald-400 before:rounded-full">Voice Active</span>
                 </div>
               </div>
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="text-muted-foreground hover:text-white transition-colors"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              
+              <div className="flex items-center gap-2">
+                {/* Mute toggle button */}
+                <button 
+                  onClick={() => {
+                    if (!isMuted) window.speechSynthesis.cancel();
+                    setIsMuted(!isMuted);
+                  }}
+                  className="text-muted-foreground hover:text-white transition-colors"
+                >
+                  {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                </button>
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="text-muted-foreground hover:text-white transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -129,6 +207,17 @@ export default function ChatWidget() {
 
             {/* Input Footer */}
             <div className="p-4 border-t border-white/10 bg-slate-900 flex gap-2">
+              <button 
+                onClick={toggleListening}
+                className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
+                  isListening 
+                    ? "bg-rose-500 text-white animate-pulse" 
+                    : "bg-slate-950 border border-white/10 text-muted-foreground hover:text-white"
+                }`}
+              >
+                {isListening ? <Mic className="h-4 w-4" /> : <MicOff className="h-4 w-4" />}
+              </button>
+              
               <input
                 type="text"
                 value={inputValue}
