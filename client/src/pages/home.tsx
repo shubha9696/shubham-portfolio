@@ -11,6 +11,7 @@ import TerminalConsole from "@/components/terminal-console";
 import ChatWidget from "@/components/chat-widget";
 import AudioController from "@/components/audio-controller";
 import CustomCursor from "@/components/custom-cursor";
+import CosmicFlowfield from "@/components/3d/cosmic-flowfield";
 import Lenis from "lenis";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -129,6 +130,7 @@ export default function Home() {
         >
           <div className="mesh-gradient" />
           <div className="noise-bg fixed inset-0 z-50 pointer-events-none" />
+          <CosmicFlowfield />
           <CustomCursor />
           <Navbar />
           <main>
